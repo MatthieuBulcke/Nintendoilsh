@@ -1,0 +1,31 @@
+body{
+    margin:0;
+    font-family:sans-serif;
+}
+/*Header*/
+header{
+    display: flex;
+    justify-content: space-between;
+    height: 6em;
+    background-color: #e60012;
+}
+svg{
+    margin:2em 1em;
+    fill:white;
+}
+nav ul{
+    margin:1.5em;
+    display: flex;
+}
+nav li{
+    margin:0 1em;
+    color:white;
+    text-align: center;
+    list-style: none;
+}
+nav li p{
+    margin:0;
+}
+i{
+    font-size:1.7em;
+}
