@@ -29,3 +29,27 @@ nav li p{
 i{
     font-size:1.7em;
 }
+/*Aside*/
+.aside{
+    position: fixed;
+    width: 5em;
+    background-color: #bf0010;
+    height: -webkit-fill-available;
+}
+.aside svg{
+    margin:1em 0 0 0;
+}
+.aside p{
+    margin:.5em;
+}
+.aside article{
+    border-radius: 0 2em 0 0;
+    color:white;
+    border:1px solid green;
+    background:#e60012;
+    text-align: center;
+    transition:.1s background-color;
+}
+.aside article:hover{
+    background-color: #bf0010;
+}
