@@ -11,6 +11,7 @@ header{
     justify-content: space-between;
     height: 4em;
     background-color: #e60012;
+    z-index: 1;
 }
 svg{
     margin: 1.3em .6em;
@@ -70,6 +71,10 @@ i{
 .main figure{
     grid-column: span 2;
     margin:.2em;
+    transition:.5s top;
+}
+.main figure:hover{
+    animation:.5s up forwards;
 }
 .main figure img{
     border-radius: 10px;
@@ -95,11 +100,44 @@ i{
 /*News*/
 .news{
     position: absolute;
-    top:4em;
-    right: 1em;
+    width: 30%;
+    top: 4em;
+    right: 0;
+    margin: 1em;
+}
+.news article div{
+    width:60%;
+}
+.news article h3{
+    margin: .5em 0;
+    font-size:1em;
+}
+.news article p{
+    margin:0;
+}
+.news article p:nth-child(2){
+    font-size:.7em;
+    color:lightgrey;
+    margin-bottom: .5em;
+}
+.news article p:nth-child(3){
+    font-size:.9em;
+    color:rgb(143, 143, 143);
 }
 .news article{
+    display: flex;
+    flex-wrap: wrap;
     background: #fff;
+    margin: .5em 0;
+}
+.news img{
+    margin:1em;
+    width: 25%;
+    float: left;
+    height: -webkit-fill-available;
+}
+.cat{
+    padding: 1em;
 }
 /*Footer*/
 footer{
@@ -157,4 +195,15 @@ footer .social p{
 }
 .twitter{
     background-color:#00acee;
+}
+/*Keframes*/
+@keyframes up{
+    0%{
+        position: relative;
+        bottom:0;
+    }
+    100%{
+        position: relative;
+        bottom:.3em;
+    }
 }
