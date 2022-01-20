@@ -3,6 +3,10 @@ body{
     font-family:sans-serif;
     background-color: #f4f4f4;
 }
+main{
+    display: flex;
+    padding: 4em 0;
+}
 /*Header*/
 header{
     width: 100%;
@@ -37,7 +41,6 @@ i{
 /*Aside*/
 .aside{
     position: fixed;
-    margin-top:4em;
     width: 5em;
     background-color: #bf0010;
     height: -webkit-fill-available;
@@ -63,25 +66,49 @@ i{
 }
 /*.MAIN*/
 .main{
-    padding:4em 0 0 5em;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     width: 60%;
+    padding-left: 5em;
 }
 .main figure{
     grid-column: span 2;
     margin:.2em;
-    transition:.5s top;
 }
 .main figure:hover{
     animation:.5s up forwards;
 }
+.main figure:hover:after{
+    opacity:1;
+}
+.main figure:after{
+    border-radius: 10px;
+    bottom: 0;
+    box-shadow: 0 12px 12px rgb(0 0 0 / 30%);
+    content: "";
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all .5s cubic-bezier(.165,.84,.44,1);
+    width: 100%;
+    z-index: -1;
+}
+/*
+.main figure:hover img{
+    box-shadow:0 .5em rgba(0, 0, 0, 0.589);
+}
+*/
 .main figure img{
     border-radius: 10px;
     align-self: stretch;
     justify-self: stretch;
     object-fit: cover;
     max-width:100%;
+    height: 100%;
+    transition:.5s box-shadow;
 }
 
 /*Classes GRID*/
@@ -99,9 +126,7 @@ i{
 }
 /*News*/
 .news{
-    position: absolute;
     width: 30%;
-    top: 4em;
     right: 0;
     margin: 1em;
 }
@@ -133,6 +158,7 @@ i{
 .news img{
     margin:1em;
     width: 25%;
+    border-radius: 10px;
     float: left;
     height: -webkit-fill-available;
 }
@@ -205,5 +231,31 @@ footer .social p{
     100%{
         position: relative;
         bottom:.3em;
+    }
+}
+/*Responsive*/
+@media only screen and (max-width: 960px) {
+    main{
+        display: block;
+    }
+    .main,.news,footer{
+        width: 88%;
+    }
+    .news{
+        padding-left:5em;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .aside{
+        display: none;
+    }
+    .main,.news,footer{
+        width: 100%;
+        padding-left: 0;
+        margin: 0;
+    }
+    .main > figure,.main figure.portrait,.main figure.paysage,.main figure.half{
+        grid-column: span 6;
+        grid-row: span 1;
     }
 }
