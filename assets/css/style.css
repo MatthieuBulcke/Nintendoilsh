@@ -64,12 +64,36 @@ i{
 .aside article:hover{
     background-color: #bf0010;
 }
+/*LeftNav*/
+.aside ul{
+    position: absolute;
+    display: none;
+    z-index:2;
+    left:5em;
+    top:0;
+    color:black;
+    margin:0;
+    padding:1em;
+    list-style: none;
+    background-color: white;
+    height: -webkit-fill-available;
+    width: 20em;
+    text-align: left;
+}
+.aside ul li p{
+    color:lightgray;
+    font-size:.8em;
+}
+.aside article:hover ul{
+    display: block;
+}
 /*.MAIN*/
 .main{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     width: 60%;
     padding-left: 5em;
+    grid-auto-rows: max-content;
 }
 .main figure{
     grid-column: span 2;
@@ -90,8 +114,6 @@ i{
     left: 0;
     opacity: 0;
     position: absolute;
-    right: 0;
-    top: 0;
     transition: all .5s cubic-bezier(.165,.84,.44,1);
     width: 100%;
     z-index: -1;
@@ -105,7 +127,6 @@ i{
     border-radius: 10px;
     align-self: stretch;
     justify-self: stretch;
-    object-fit: cover;
     max-width:100%;
     height: 100%;
     transition:.5s box-shadow;
